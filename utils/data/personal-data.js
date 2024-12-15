@@ -1,17 +1,17 @@
 export const personalData = {
-  name: "ABU SAID",
-  profile: '/profile.png',
-  designation: "Software Developer",
-  description: "My name is ABU SAID. I am a professional and enthusiastic programmer in my daily life. I am a quick learner with a self-learning attitude. I love to learn and explore new technologies and am passionate about problem-solving. I love almost all the stacks of web application development and love to make the web more open to the world. My core skill is based on JavaScript and I love to do most of the things using JavaScript. I am available for any kind of job opportunity that suits my skills and interests.",
-  email: 'abusaid7388@gmail.com',
-  phone: '+8801608797655',
-  address: 'Middle Badda, Dhaka, Bangladesh - 1212 ',
-  github: 'https://github.com/said7388',
-  facebook: 'https://www.facebook.com/abusaid.riyaz/',
-  linkedIn: 'https://www.linkedin.com/in/abu-said-bd/',
+  name: "PRADEVA FAIRUZ ZABBAR",
+  profile: '/profile.jpg',
+  designation: "Software Developer and Computer Vision Engineer",
+  description: "My name is PRADEVA FAIRUZ ZABBAR. I am a professional programmer with high passion in my daily life. As a fast learner with an independent attitude, I am passionate about learning and exploring new technologies. I have a great interest in problem solving and contributing to technology development. My specialty is application development with a particular focus on back-end development, with core expertise in JavaScript. In addition to back-end expertise, I also have experience in Computer Vision. I enjoy working with almost all technologies related to developing Applications and Computer Vision to be more open and accessible to the world.",
+  email: 'pradeva2203@outlook.com',
+  phone: '+62 813 8121 8850',
+  address: 'Bekasi City, West Java, Indonesia - 17133',
+  github: 'https://github.com/Pradeva',
+  facebook: 'https://www.instagram.com/prdvfrzzbbr/',
+  linkedIn: 'https://www.linkedin.com/in/pradeva-fairuz-zabbar-a06055196/',
   twitter: 'https://twitter.com/said7388',
   stackOverflow: 'https://stackoverflow.com/users/16840768/abu-said',
   leetcode: "https://leetcode.com/said3812/",
   devUsername: "said7388",
-  resume: "https://drive.google.com/file/d/1eyutpKFFhJ9X-qpQGKhUNnVRkB5Wer00/view?usp=sharing"
+  resume: "https://drive.google.com/file/d/1IaUtfzoSgVHM5jTvxcXGkbakHI0ygdac/view?usp=sharing"
 }

@@ -67,6 +67,21 @@ function Experience() {
                           </p>
                         </div>
                       </div>
+                      {/* <div>
+                        <p className="text-xs sm:text-sm text-[#16f2b3]">
+                          {experience.description1}
+                        </p>
+                      </div>
+                      <div>
+                        <p className="text-xs sm:text-sm text-[#16f2b3]">
+                          {experience.description2}
+                        </p>
+                      </div>
+                      <div>
+                        <p className="text-xs sm:text-sm text-[#16f2b3]">
+                          {experience.description3}
+                        </p>
+                      </div> */}
                     </div>
                   </GlowCard>
                 ))
