@@ -6,6 +6,8 @@ import Experience from "./components/homepage/experience";
 import HeroSection from "./components/homepage/hero-section";
 import Projects from "./components/homepage/projects";
 import Skills from "./components/homepage/skills";
+import { Analytics } from '@vercel/analytics/next';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 
 async function getData() {
   const res = await fetch(`https://dev.to/api/articles?username=${personalData.devUsername}`)
@@ -26,6 +28,7 @@ export default async function Home() {
 
   return (
     <>
+      <Analytics />
       <HeroSection />
       <AboutSection />
       <Experience />
@@ -34,6 +37,7 @@ export default async function Home() {
       <Education />
       {/* <Blog blogs={blogs} /> */}
       <ContactSection />
+      <SpeedInsights/>
     </>
   )
 };
