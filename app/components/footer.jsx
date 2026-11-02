@@ -1,41 +1,45 @@
 // @flow strict
 import Link from 'next/link';
-import { CgGitFork } from "react-icons/cg";
-import { IoStar } from "react-icons/io5";
+import { personalData } from '@/utils/data/personal-data';
 
 function Footer() {
+  const year = new Date().getFullYear();
   return (
-    <div className="relative border-t bg-[#0d1224] border-[#353951] text-white">
-      <div className="mx-auto px-6 sm:px-12 lg:max-w-[70rem] xl:max-w-[76rem] 2xl:max-w-[92rem] py-6 lg:py-10">
-        <div className="flex justify-center -z-40">
-          <div className="absolute top-0 h-[1px] w-1/2  bg-gradient-to-r from-transparent via-violet-500 to-transparent"></div>
+    <footer className="relative border-t border-line bg-elevated">
+      <div className="mx-auto max-w-6xl px-6 py-14 sm:px-10">
+        <div className="flex flex-col items-start justify-between gap-8 md:flex-row md:items-center">
+          <div>
+            <p className="text-xs uppercase tracking-[0.2em] text-muted">Get in touch</p>
+            <Link
+              href={`mailto:${personalData.email}`}
+              className="mt-2 block font-display text-2xl font-bold tracking-tightest text-content transition-colors hover:text-accent sm:text-3xl"
+            >
+              {personalData.email}
+            </Link>
+          </div>
+
+          <div className="flex items-center gap-6 text-sm">
+            <Link href={personalData.github} target="_blank" className="text-muted transition-colors hover:text-accent">
+              GitHub
+            </Link>
+            <Link href={personalData.linkedIn} target="_blank" className="text-muted transition-colors hover:text-accent">
+              LinkedIn
+            </Link>
+            <Link href={personalData.instagram} target="_blank" className="text-muted transition-colors hover:text-accent">
+              Instagram
+            </Link>
+          </div>
         </div>
-        <div className="flex flex-col md:flex-row items-center justify-between">
-          <p className="text-sm">
-            © Developer Portfolio by <Link target="_blank" href="https://github.com/Pradeva/" className="text-[#16f2b3]">Pradeva</Link>
+
+        <div className="mt-12 flex flex-col items-center justify-between gap-3 border-t border-line pt-6 text-sm text-muted sm:flex-row">
+          <p>
+            © {year} Pradeva Fairuz Zabbar
           </p>
-          {/* <div className="flex items-center gap-5">
-            <Link
-              target="_blank"
-              href="https://github.com/said7388/developer-portfolio"
-              className="flex items-center gap-2 uppercase hover:text-[#16f2b3]"
-            >
-              <IoStar />
-              <span>Star</span>
-            </Link>
-            <Link
-              target="_blank"
-              href="https://github.com/said7388/developer-portfolio/fork"
-              className="flex items-center gap-2 uppercase hover:text-[#16f2b3]"
-            >
-              <CgGitFork />
-              <span>Fork</span>
-            </Link>
-          </div> */}
+          <p>Software Developer &amp; Computer Vision Engineer</p>
         </div>
       </div>
-    </div >
+    </footer>
   );
-};
+}
 
 export default Footer;

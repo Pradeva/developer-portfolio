@@ -2,38 +2,92 @@
 @tailwind components;
 @tailwind utilities;
 
+/*
+  Emerald Noir theme.
+  Palet dikendalikan lewat CSS variables agar mendukung toggle dark/light.
+  Default = dark. Light aktif saat <html class="light"> (via next-themes).
+*/
 :root {
-  --foreground-rgb: rgb(211, 216, 232);
+  /* Font stack sistem (tanpa unduh Google Fonts). Tampil profesional & modern
+     di semua OS. --font-display dipakai untuk heading. */
+  --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
+    Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji", sans-serif;
+  --font-display: "Segoe UI", ui-sans-serif, system-ui, -apple-system, Roboto,
+    Helvetica, Arial, sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-  }
+:root,
+:root.dark {
+  --bg: #0a0f0d; /* hampir hitam, sedikit kehijauan */
+  --bg-elevated: #0e1512;
+  --surface: #121a17;
+  --surface-2: #16201c;
+  --border: #1f2d28;
+  --text: #e8f0ed; /* putih hangat */
+  --text-muted: #aab8b2; /* dinaikkan kontrasnya agar mudah dibaca */
+  --accent: #10b981; /* emerald */
+  --accent-strong: #34d399;
+  --accent-soft: rgba(16, 185, 129, 0.12);
+}
+
+:root.light {
+  --bg: #f6f9f7;
+  --bg-elevated: #ffffff;
+  --surface: #ffffff;
+  --surface-2: #eef3f0;
+  --border: #d9e2dd;
+  --text: #0a0f0d;
+  --text-muted: #556560;
+  --accent: #059669;
+  --accent-strong: #047857;
+  --accent-soft: rgba(5, 150, 105, 0.1);
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background-color: #0d1224;
+  color: var(--text);
+  background-color: var(--bg);
+  font-family: var(--font-sans);
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+/* Scrollbar halus bernuansa tema */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--border) transparent;
 }
 
 #sticky-card-1 {
   --index: 1;
 }
-
 #sticky-card-2 {
   --index: 2;
 }
-
 #sticky-card-3 {
   --index: 3;
 }
-
 #sticky-card-4 {
   --index: 4;
 }
 
 .sticky-card {
-  // padding-top: calc(var(--index) * 2.5rem);
   top: calc(var(--index) * 4rem);
+}
+
+/* Utilitas reveal-on-scroll (dipakai section) */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity 0.7s ease,
+    transform 0.7s ease;
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
 }

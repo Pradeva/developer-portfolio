@@ -1,89 +1,85 @@
-// @flow strict
-import { personalData } from '@/utils/data/personal-data';
-import Link from 'next/link';
-import { BiLogoLinkedin } from "react-icons/bi";
+'use client';
+
+import { personalData } from "@/utils/data/personal-data";
+import Link from "next/link";
+import Section from "@/app/components/ui/section";
+import { Reveal } from "@/app/components/ui/motion";
+import ContactForm from "./contact-form";
+import { MdAlternateEmail, MdCall } from "react-icons/md";
 import { CiLocationOn } from "react-icons/ci";
-import { FaFacebook, FaInstagram, FaStackOverflow } from 'react-icons/fa';
-import { FaXTwitter } from "react-icons/fa6";
-import { IoLogoGithub, IoMdCall } from "react-icons/io";
-import { MdAlternateEmail } from "react-icons/md";
-import ContactForm from './contact-form';
+import { BsGithub, BsLinkedin } from "react-icons/bs";
+import { FaInstagram } from "react-icons/fa";
 
 function ContactSection() {
   return (
-    <div id="contact" className="my-12 lg:my-16 relative mt-24 text-white">
-      <div className="hidden lg:flex flex-col items-center absolute top-24 -right-8">
-        <span className="bg-[#1a1443] w-fit text-white rotate-90 p-2 px-5 text-xl rounded-md">
-          CONTACT
-        </span>
-        <span className="h-36 w-[2px] bg-[#1a1443]"></span>
-      </div>
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
-        <ContactForm />
-        <div className="lg:w-3/4 ">
-          <div className="flex flex-col gap-5 lg:gap-9">
-            <p className="text-sm md:text-xl flex items-center gap-3">
-              <MdAlternateEmail
-                className="bg-[#8b98a5] p-2 rounded-full hover:bg-[#16f2b3] hover:scale-110 transition-all duration-300 text-gray-800 cursor-pointer"
-                size={36}
-              />
-              <span>{personalData.email}</span>
-            </p>
-            <p className="text-sm md:text-xl flex items-center gap-3">
-              <IoMdCall
-                className="bg-[#8b98a5] p-2 rounded-full hover:bg-[#16f2b3] hover:scale-110 transition-all duration-300 text-gray-800 cursor-pointer"
-                size={36}
-              />
-              <span>
-                {personalData.phone}
-              </span>
-            </p>
-            <p className="text-sm md:text-xl flex items-center gap-3">
-              <CiLocationOn
-                className="bg-[#8b98a5] p-2 rounded-full hover:bg-[#16f2b3] hover:scale-110 transition-all duration-300 text-gray-800 cursor-pointer"
-                size={36}
-              />
-              <span>
-                {personalData.address}
-              </span>
-            </p>
+    <Section id="contact">
+      <div className="mx-auto max-w-6xl px-6 sm:px-10">
+        <Reveal>
+          <div className="flex items-center gap-3">
+            <span className="font-mono text-sm text-accent">06</span>
+            <span className="h-px w-8 bg-accent/60" />
+            <span className="text-xs font-medium uppercase tracking-[0.2em] text-muted">
+              Contact
+            </span>
           </div>
-          <div className="mt-8 lg:mt-16 flex items-center gap-5 lg:gap-10">
-            <Link target="_blank" href={personalData.github}>
-              <IoLogoGithub
-                className="bg-[#8b98a5] p-3 rounded-full hover:bg-[#16f2b3] hover:scale-110 transition-all duration-300 text-gray-800 cursor-pointer"
-                size={48}
-              />
-            </Link>
-            <Link target="_blank" href={personalData.linkedIn}>
-              <BiLogoLinkedin
-                className="bg-[#8b98a5] p-3 rounded-full hover:bg-[#16f2b3] hover:scale-110 transition-all duration-300 text-gray-800 cursor-pointer"
-                size={48}
-              />
-            </Link>
-            {/* <Link target="_blank" href={personalData.twitter}>
-              <FaXTwitter
-                className="bg-[#8b98a5] p-3 rounded-full hover:bg-[#16f2b3] hover:scale-110 transition-all duration-300 text-gray-800 cursor-pointer"
-                size={48}
-              />
-            </Link>
-            <Link target="_blank" href={personalData.stackOverflow}>
-              <FaStackOverflow
-                className="bg-[#8b98a5] p-3 rounded-full hover:bg-[#16f2b3] hover:scale-110 transition-all duration-300 text-gray-800 cursor-pointer"
-                size={48}
-              />
-            </Link> */}
-            <Link target="_blank" href={personalData.facebook}>
-              <FaInstagram
-                className="bg-[#8b98a5] p-3 rounded-full hover:bg-[#16f2b3] hover:scale-110 transition-all duration-300 text-gray-800 cursor-pointer"
-                size={48}
-              />
-            </Link>
-          </div>
+          <h2 className="mt-4 max-w-4xl font-display text-4xl font-bold tracking-tightest text-content sm:text-6xl lg:text-7xl">
+            Let&apos;s build something{" "}
+            <span className="text-accent">together</span>.
+          </h2>
+        </Reveal>
+
+        <div className="mt-16 grid grid-cols-1 gap-12 lg:grid-cols-12 lg:gap-16">
+          {/* Info kontak */}
+          <Reveal className="lg:col-span-5" delay={0.1}>
+            <p className="text-lg leading-relaxed text-muted">
+              Open to freelance projects and collaborations. Tell me about your
+              idea and I&apos;ll get back to you.
+            </p>
+
+            <div className="mt-8 flex flex-col gap-5">
+              <a href={`mailto:${personalData.email}`} className="group flex items-center gap-4">
+                <span className="flex h-11 w-11 items-center justify-center rounded-full border border-line text-accent transition-colors group-hover:border-accent">
+                  <MdAlternateEmail size={20} />
+                </span>
+                <span className="text-content transition-colors group-hover:text-accent">
+                  {personalData.email}
+                </span>
+              </a>
+              <div className="flex items-center gap-4">
+                <span className="flex h-11 w-11 items-center justify-center rounded-full border border-line text-accent">
+                  <MdCall size={20} />
+                </span>
+                <span className="text-content">{personalData.phone}</span>
+              </div>
+              <div className="flex items-center gap-4">
+                <span className="flex h-11 w-11 items-center justify-center rounded-full border border-line text-accent">
+                  <CiLocationOn size={20} />
+                </span>
+                <span className="text-content">{personalData.address}</span>
+              </div>
+            </div>
+
+            <div className="mt-10 flex items-center gap-5">
+              <Link href={personalData.github} target="_blank" className="text-muted transition-colors hover:text-accent">
+                <BsGithub size={24} />
+              </Link>
+              <Link href={personalData.linkedIn} target="_blank" className="text-muted transition-colors hover:text-accent">
+                <BsLinkedin size={24} />
+              </Link>
+              <Link href={personalData.instagram} target="_blank" className="text-muted transition-colors hover:text-accent">
+                <FaInstagram size={24} />
+              </Link>
+            </div>
+          </Reveal>
+
+          {/* Form */}
+          <Reveal className="lg:col-span-7" delay={0.2}>
+            <ContactForm />
+          </Reveal>
         </div>
       </div>
-    </div>
+    </Section>
   );
-};
+}
 
 export default ContactSection;

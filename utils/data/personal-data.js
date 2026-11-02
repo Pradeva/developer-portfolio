@@ -7,11 +7,7 @@ export const personalData = {
   phone: '+62 813 8121 8850',
   address: 'Bekasi City, West Java, Indonesia - 17133',
   github: 'https://github.com/Pradeva',
-  facebook: 'https://www.instagram.com/prdvfrzzbbr/',
+  instagram: 'https://www.instagram.com/prdvfrzzbbr/',
   linkedIn: 'https://www.linkedin.com/in/pradeva-fairuz-zabbar-a06055196/',
-  twitter: 'https://twitter.com/said7388',
-  stackOverflow: 'https://stackoverflow.com/users/16840768/abu-said',
-  leetcode: "https://leetcode.com/said3812/",
-  devUsername: "said7388",
   resume: "https://drive.google.com/file/d/13YugTSID4D_AwBa4VnvbMZ-Wtx4mJXcD/view?usp=sharing"
 }

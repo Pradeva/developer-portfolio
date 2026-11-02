@@ -1,97 +1,50 @@
-// @flow strict
+'use client';
 
 import { experiences } from "@/utils/data/experience";
-import Image from "next/image";
-import { BsPersonWorkspace } from "react-icons/bs";
-import AnimationLottie from "../../helper/animation-lottie";
-import GlowCard from "../../helper/glow-card";
-import experience from '/public/lottie/code.json';
+import Section from "@/app/components/ui/section";
+import SectionHeader from "@/app/components/ui/section-header";
+import { Reveal } from "@/app/components/ui/motion";
 
 function Experience() {
   return (
-    <div id="experience" className="relative z-50 border-t my-12 lg:my-24 border-[#25213b]">
-      <Image
-        src="/section.svg"
-        alt="Hero"
-        width={1572}
-        height={795}
-        className="absolute top-0 -z-10"
-      />
+    <Section id="experience">
+      <div className="mx-auto max-w-6xl px-6 sm:px-10">
+        <SectionHeader index="02" label="Experience" title="Where I've worked" />
 
-      <div className="flex justify-center my-5 lg:py-8">
-        <div className="flex  items-center">
-          <span className="w-24 h-[2px] bg-[#1a1443]"></span>
-          <span className="bg-[#1a1443] w-fit text-white p-2 px-5 text-xl rounded-md">
-            Experiences
-          </span>
-          <span className="w-24 h-[2px] bg-[#1a1443]"></span>
+        <div className="mt-16 lg:pl-6">
+          <ol className="relative border-l border-line">
+            {experiences.map((exp, i) => (
+              <Reveal
+                as="li"
+                key={exp.id}
+                delay={i * 0.06}
+                className="group relative mb-12 pl-8 last:mb-0 sm:pl-12"
+              >
+                {/* Titik timeline */}
+                <span className="absolute -left-[7px] top-1.5 h-3.5 w-3.5 rounded-full border-2 border-accent bg-base transition-colors duration-300 group-hover:bg-accent" />
+
+                <p className="font-mono text-xs uppercase tracking-wider text-accent">
+                  {exp.duration}
+                </p>
+                <h3 className="mt-2 font-display text-2xl font-semibold text-content lg:text-3xl">
+                  {exp.title}
+                </h3>
+                <p className="mt-1 text-sm text-muted">{exp.company}</p>
+
+                <ul className="mt-4 space-y-1.5 text-sm leading-relaxed text-muted">
+                  {[exp.description1, exp.description2, exp.description3]
+                    .filter(Boolean)
+                    .map((d, idx) => (
+                      <li key={idx}>{d.replace(/^-\s*/, "")}</li>
+                    ))}
+                </ul>
+              </Reveal>
+            ))}
+          </ol>
         </div>
       </div>
-
-      <div className="py-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16">
-          <div className="flex justify-center items-start">
-            <div className="w-full h-full">
-              <AnimationLottie animationPath={experience} />
-            </div>
-          </div>
-
-          <div>
-            <div className="flex flex-col gap-6">
-              {
-                experiences.map(experience => (
-                  <GlowCard key={experience.id} identifier={`experience-${experience.id}`}>
-                    <div className="p-3 relative">
-                      <Image
-                        src="/blur-23.svg"
-                        alt="Hero"
-                        width={1080}
-                        height={200}
-                        className="absolute bottom-0 opacity-80"
-                      />
-                      <div className="flex justify-center">
-                        <p className="text-xs sm:text-sm text-[#16f2b3]">
-                          {experience.duration}
-                        </p>
-                      </div>
-                      <div className="flex items-center gap-x-8 px-3 py-5">
-                        <div className="text-violet-500  transition-all duration-300 hover:scale-125">
-                          <BsPersonWorkspace size={36} />
-                        </div>
-                        <div>
-                          <p className="text-base sm:text-xl mb-2 font-medium uppercase">
-                            {experience.title}
-                          </p>
-                          <p className="text-sm sm:text-base">
-                            {experience.company}
-                          </p>
-                        </div>
-                      </div>
-                      {/* <div>
-                        <p className="text-xs sm:text-sm text-[#16f2b3]">
-                          {experience.description1}
-                        </p>
-                      </div>
-                      <div>
-                        <p className="text-xs sm:text-sm text-[#16f2b3]">
-                          {experience.description2}
-                        </p>
-                      </div>
-                      <div>
-                        <p className="text-xs sm:text-sm text-[#16f2b3]">
-                          {experience.description3}
-                        </p>
-                      </div> */}
-                    </div>
-                  </GlowCard>
-                ))
-              }
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+    </Section>
   );
-};
+}
 
 export default Experience;

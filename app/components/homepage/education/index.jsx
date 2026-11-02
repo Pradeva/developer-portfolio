@@ -1,85 +1,36 @@
-// @flow strict
-import Image from "next/image";
+'use client';
 
 import { educations } from "@/utils/data/educations";
-import { BsPersonWorkspace } from "react-icons/bs";
-import AnimationLottie from "../../helper/animation-lottie";
-import GlowCard from "../../helper/glow-card";
-import lottieFile from '/public/lottie/study.json';
+import Section from "@/app/components/ui/section";
+import SectionHeader from "@/app/components/ui/section-header";
+import { Reveal } from "@/app/components/ui/motion";
 
 function Education() {
   return (
-    <div id="education" className="relative z-50 border-t my-12 lg:my-24 border-[#25213b]">
-      <Image
-        src="/section.svg"
-        alt="Hero"
-        width={1572}
-        height={795}
-        className="absolute top-0 -z-10"
-      />
-      <div className="flex justify-center -translate-y-[1px]">
-        <div className="w-3/4">
-          <div className="h-[1px] bg-gradient-to-r from-transparent via-violet-500 to-transparent  w-full" />
+    <Section id="education">
+      <div className="mx-auto max-w-6xl px-6 sm:px-10">
+        <SectionHeader index="05" label="Education" title="Academic background" />
+
+        <div className="mt-14 flex flex-col divide-y divide-line border-y border-line">
+          {educations.map((edu, i) => (
+            <Reveal
+              key={edu.id}
+              delay={i * 0.08}
+              className="flex flex-col gap-2 py-8 sm:flex-row sm:items-center sm:justify-between"
+            >
+              <div>
+                <h3 className="font-display text-xl font-semibold text-content lg:text-2xl">
+                  {edu.title}
+                </h3>
+                <p className="mt-1 text-sm text-muted">{edu.institution}</p>
+              </div>
+              <span className="font-mono text-sm text-accent">{edu.duration}</span>
+            </Reveal>
+          ))}
         </div>
       </div>
-
-      <div className="flex justify-center my-5 lg:py-8">
-        <div className="flex  items-center">
-          <span className="w-24 h-[2px] bg-[#1a1443]"></span>
-          <span className="bg-[#1a1443] w-fit text-white p-2 px-5 text-xl rounded-md">
-            Educations
-          </span>
-          <span className="w-24 h-[2px] bg-[#1a1443]"></span>
-        </div>
-      </div>
-
-      <div className="py-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16">
-          <div className="flex justify-center items-start">
-            <div className="w-3/4 h-3/4">
-              <AnimationLottie animationPath={lottieFile} />
-            </div>
-          </div>
-
-          <div>
-            <div className="flex flex-col gap-6">
-              {
-                educations.map(education => (
-                  <GlowCard key={education.id} identifier={`education-${education.id}`}>
-                    <div className="p-3 relative text-white">
-                      <Image
-                        src="/blur-23.svg"
-                        alt="Hero"
-                        width={1080}
-                        height={200}
-                        className="absolute bottom-0 opacity-80"
-                      />
-                      <div className="flex justify-center">
-                        <p className="text-xs sm:text-sm text-[#16f2b3]">
-                          {education.duration}
-                        </p>
-                      </div>
-                      <div className="flex items-center gap-x-8 px-3 py-5">
-                        <div className="text-violet-500  transition-all duration-300 hover:scale-125">
-                          <BsPersonWorkspace size={36} />
-                        </div>
-                        <div>
-                          <p className="text-base sm:text-xl mb-2 font-medium uppercase">
-                            {education.title}
-                          </p>
-                          <p className="text-sm sm:text-base">{education.institution}</p>
-                        </div>
-                      </div>
-                    </div>
-                  </GlowCard>
-                ))
-              }
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+    </Section>
   );
-};
+}
 
 export default Education;
