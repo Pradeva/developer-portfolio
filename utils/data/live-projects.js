@@ -32,6 +32,12 @@ export const liveProjects = [
       'An online booking app for a salon & spa with a warm, boutique UI. Guests pick a service, choose a date and an available time slot, and confirm an appointment in seconds — with transparent pricing and durations.',
     tags: ['Next.js', 'React', 'Tailwind CSS', 'Framer Motion'],
   },
-
+  {
+    name: 'Booking & Reservation',
+    url: 'https://content-management-system-ruby.vercel.app/',
+    description:
+      'A Content Management System (CMS) is a software application that allows users to create, manage, and modify website content without requiring advanced technical knowledge. It streamlines the digital publishing process by providing intuitive interfaces, collaboration tools, and customizable templates to efficiently handle text, imagery, and media.',
+    tags: ['Next.js', 'React', 'Tailwind CSS', 'Framer Motion'],
+  },
   // Tambahkan proyek live lainnya di sini.
 ];
