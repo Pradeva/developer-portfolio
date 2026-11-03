@@ -4,6 +4,7 @@ import Education from "./components/homepage/education";
 import Experience from "./components/homepage/experience";
 import HeroSection from "./components/homepage/hero-section";
 import Projects from "./components/homepage/projects";
+import LiveProjects from "./components/homepage/live-projects";
 import Skills from "./components/homepage/skills";
 import { Analytics } from '@vercel/analytics/next';
 import { SpeedInsights } from '@vercel/speed-insights/next';
@@ -17,6 +18,7 @@ export default function Home() {
       <Experience />
       <Skills />
       <Projects />
+      <LiveProjects />
       <Education />
       <ContactSection />
       <SpeedInsights />

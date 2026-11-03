@@ -9,7 +9,7 @@ function Education() {
   return (
     <Section id="education">
       <div className="mx-auto max-w-6xl px-6 sm:px-10">
-        <SectionHeader index="05" label="Education" title="Academic background" />
+        <SectionHeader index="06" label="Education" title="Academic background" />
 
         <div className="mt-14 flex flex-col divide-y divide-line border-y border-line">
           {educations.map((edu, i) => (
