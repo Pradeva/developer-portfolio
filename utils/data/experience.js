@@ -1,12 +1,12 @@
 export const experiences = [
   {
     id: 1,
-    title: 'Middleware Developer (Application Management)',
+    title: 'Middleware Developer (IT Backend Development)',
     company: "PT Bank Pembangunan Daerah Jawa Barat dan Banten Tbk",
     duration: "(Jul 2025 - Present)",
-    description1: "- Participated in an intensive training program covering key areas of banking IT, including software engineering, database management, and cybersecurity.",
-    description2: "- Involved in the development of a SLIK summarization system to support the needs of the Commercial Division.",
-    description3: "- Collaborated with cross-functional teams to analyze business requirements and implement scalable, efficient tech solutions."
+    description1: "- Enhancement of the IBM ACE integration system for all banking transactions.",
+    description2: "- Development and integration of a payment gateway system with various aggregators.",
+    description3: "- Designing a reconciliation and disbursement system for biller transactions, ensuring a reliable and seamless experience for customers."
   },
   {
     id: 2,
@@ -19,8 +19,8 @@ export const experiences = [
   },
   {
     id: 3,
-    title: 'Computer Vision Engineer',
-    company: "Rastek Inovasi Digital",
+    title: 'Computer Vision Engineer (AI Engineer)',
+    company: "PT Rastek Inovasi Digital",
     duration: "(Dec 2023 - Feb 2025)",
     description1: "- Suicide prevention detection on the Jakarta Pedestrian Bridge.",
     description2: "- Developed a Video Management System website based on Node Js and React.",
@@ -29,7 +29,7 @@ export const experiences = [
   {
     id: 4,
     title: "FullStack and Mobile Developer",
-    company: "Rastek Inovasi Digital",
+    company: "PT Rastek Inovasi Digital",
     duration: "(Jul 2023 - Dec 2023)",
     description1: "- Develop an IoT-integrated attendance data collection website.",
     description2: "- Develop a mobile application for data collection of fiber optic network additions.",
