@@ -1,12 +1,9 @@
 export const skillsData = [
-  'HTML',
-  'CSS',
-  'Bootstrap',
   'Javascript',
+  'Java',
   'React',
   'python',
   'opencv',
-  'Go',
   'dart',
   'flutter',
   'MySQL',

@@ -45,7 +45,7 @@ function AboutSection() {
               building scalable and maintainable systems.
             </p>
             <p className="mt-6 text-base leading-relaxed text-muted lg:text-lg">
-              Beyond the back-end, I work extensively in{" "}
+              Beyond the application-development, I work extensively in{" "}
               <span className="text-content">Computer Vision</span> — designing
               detection systems that make technology more useful and accessible.
               I am a fast, independent learner who enjoys turning complex ideas

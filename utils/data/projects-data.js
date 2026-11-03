@@ -6,6 +6,26 @@ import travel from '/public/image/travel.jpg';
 export const projectsData = [
     {
         id: 1,
+        name: 'Hyena AI',
+        description: "An enterprise-grade AI solution driven by fine-tuned Large Language Models (LLMs) and RAG architecture. It aggregates multi-source log telemetry from Grafana and Elasticsearch to monitor and analyze banking transactions, identify systemic anomalies, generate remediation strategies, and dispatch automated alerts.",
+        tools: ['LLM', 'vLLM', 'Grafana', 'Elasticsearch', 'Python', 'Javascript', 'React'],
+        role: 'Middleware Developer',
+        code: '',
+        demo: '',
+        image: crefin,
+    },
+    {
+        id: 2,
+        name: 'Automated Biller Settlement & Reconciliation System',
+        description: "A fully automated transaction data reconciliation system for biller services. It automatically initiates disbursements for timed-out transactions that status as 'failed' following an advice check, requiring zero manual intervention.",
+        tools: ['IBM ACE', 'Java', 'Javascript', 'Flink', 'React'],
+        role: 'Middleware Developer',
+        code: '',
+        demo: '',
+        image: crefin,
+    },
+    {
+        id: 3,
         name: 'Computer Vision Surveillance System for Jababeka',
         description: "A cutting-edge computer vision system designed to enhance surveillance capabilities in Jababeka. This system focuses on detecting and analyzing various fraudulent activities in real-time, improving security and operational efficiency.",
         tools: ['OpenCV', 'YOLO', 'Intel Geti', 'Python', 'MinIO', 'Pentaho'],
@@ -15,7 +35,7 @@ export const projectsData = [
         image: crefin,
     },
     {
-        id: 2,
+        id: 4,
         name: 'Computer Vision Surveillance for JPO Jakarta',
         description: 'An advanced computer vision system aimed at enhancing public safety by monitoring pedestrian bridges for signs of potential suicide attempts. The system leverages AI to detect unusual behaviors, provide early warnings, and enable rapid intervention to prevent tragedies.',
         tools: ['OpenCV', 'Intel Geti', 'Python', 'MinIO'],
@@ -25,7 +45,7 @@ export const projectsData = [
         image: travel,
     },
     {
-        id: 3,
+        id: 5,
         name: 'Video Management System',
         description: 'A flexible and scalable Video Management System (VMS) designed to integrate with RTSP camera streams from any brand. This system provides centralized video monitoring, recording, and analysis, ensuring seamless management of video surveillance networks.',
         tools: ['Express JS', 'React JS', 'PM2', 'PostgreSQL', 'Cronjob', 'JWT'],
@@ -35,7 +55,7 @@ export const projectsData = [
         image: realEstate,
     },
     {
-        id: 4,
+        id: 6,
         name: 'Mbravo Mobile APP',
         description: "A mobile application designed to streamline the data collection process for documenting fiber optic network additions. The app enables field technicians to efficiently record, organize, and share network expansion data, ensuring accuracy and improving operational workflows.",
         tools: ['React Native'],
@@ -45,7 +65,7 @@ export const projectsData = [
         role: 'Mobile Developer',
     },
     {
-        id: 5,
+        id: 7,
         name: 'IoT-Integrated Attendance Data Collection Website',
         description: "A web-based application designed to collect and manage attendance data through IoT devices. The system automates attendance tracking, integrates seamlessly with IoT devices such as biometric scanners or RFID readers, and provides real-time reporting and analytics for streamlined workforce management.",
         tools: ['Laravel', 'ZKTeco'],

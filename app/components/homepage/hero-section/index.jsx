@@ -56,7 +56,7 @@ function HeroSection() {
         >
           <p className="max-w-xl text-lg leading-relaxed text-muted">
             Software Developer &amp; Computer Vision Engineer. I build reliable
-            back-end systems and intelligent vision solutions, turning complex
+            application systems and intelligent vision solutions, turning complex
             problems into clean, working products.
           </p>
 
